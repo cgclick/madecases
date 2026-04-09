@@ -126,15 +126,13 @@ export default function SignupForm() {
 
       {/* Row 3: Style */}
       <div style={{ marginBottom: '16px' }}>
-        <label htmlFor="style_interest" className="mc-label">Style Interest</label>
+        <label htmlFor="style_interest" className="mc-label">Product</label>
         <select
           id="style_interest" name="style_interest"
           value={form.style_interest} onChange={handleChange}
           className="mc-select"
         >
-          <option value="standard">Standard — single card display</option>
-          <option value="graded">Graded slab display</option>
-          <option value="multi">Multi-card display</option>
+          <option value="standard">Elite Trainer Box Case</option>
           <option value="unsure">Not sure yet</option>
         </select>
       </div>

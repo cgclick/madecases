@@ -110,21 +110,23 @@ async function ThankYouContent({ searchParams }: PageProps) {
       </div>
 
       {/* Back link */}
-      <a href="/" style={{
-        fontFamily: 'var(--font-body)',
-        fontSize: '12px',
-        letterSpacing: '0.1em',
-        textTransform: 'uppercase',
-        color: 'rgba(240,232,213,0.25)',
-        textDecoration: 'none',
-        marginTop: '48px',
-        transition: 'color 0.2s',
-      }}
-      onMouseEnter={e => (e.currentTarget.style.color = 'rgba(240,232,213,0.6)')}
-      onMouseLeave={e => (e.currentTarget.style.color = 'rgba(240,232,213,0.25)')}
-      >
+      <a href="/" className="back-link">
         ← Back to madecases.com
       </a>
+
+      <style>{`
+        .back-link {
+          font-family: var(--font-body);
+          font-size: 12px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: rgba(240,232,213,0.25);
+          text-decoration: none;
+          margin-top: 48px;
+          transition: color 0.2s;
+        }
+        .back-link:hover { color: rgba(240,232,213,0.6); }
+      `}</style>
 
     </main>
   )

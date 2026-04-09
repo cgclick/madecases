@@ -1,4 +1,20 @@
 import SignupForm from '@/components/SignupForm'
+import ProductGallery from '@/components/ProductGallery'
+
+const PRODUCT_IMAGES = [
+  {
+    src: '/etb-case-hero.jpg',
+    alt: 'MadeCases ETB display case — hero',
+  },
+  {
+    src: '/etb-details.jpg',
+    alt: 'MadeCases ETB display case — details',
+  },
+  {
+    src: '/etb-packaging.jpg',
+    alt: 'MadeCases ETB display case — packaging',
+  },
+]
 
 export default function HomePage() {
   return (
@@ -47,7 +63,7 @@ export default function HomePage() {
           {/* Left — Copy */}
           <div>
             <div className="anim-1" style={{ marginBottom: '28px' }}>
-              <span className="eyebrow">Premium Acrylic Display Cases</span>
+              <span className="eyebrow">Elite Trainer Box Display Case</span>
             </div>
 
             <div className="gold-line anim-2" style={{ marginBottom: '28px' }} />
@@ -60,7 +76,7 @@ export default function HomePage() {
               color: '#f0e8d5',
               letterSpacing: '-0.01em',
             }}>
-              Your collection.
+              Your ETB deserves
             </h1>
             <h1 className="anim-3 font-display" style={{
               fontSize: 'clamp(52px, 6vw, 88px)',
@@ -71,7 +87,7 @@ export default function HomePage() {
               color: '#c9a84c',
               letterSpacing: '-0.01em',
             }}>
-              Elevated.
+              better than a shelf.
             </h1>
 
             <p className="anim-4" style={{
@@ -82,8 +98,8 @@ export default function HomePage() {
               maxWidth: '420px',
               marginBottom: '44px',
             }}>
-              Optical-grade cast acrylic, flame-polished edges, magnetic closure.
-              Built for the cards you actually care about.
+              A custom-fit acrylic display case for sealed Pokemon Elite Trainer Boxes.
+              Optical-grade clarity, magnetic closure, UV-filtering. Show it off the way it deserves.
             </p>
 
             <div className="anim-5" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
@@ -123,18 +139,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right — Product visual */}
+          {/* Right — Product gallery */}
           <div className="anim-4" style={{ display: 'flex', justifyContent: 'center' }}>
-            <div className="product-frame float" style={{
-              width: '100%', maxWidth: '440px', aspectRatio: '4/5',
-            }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://via.placeholder.com/440x550/0f0f12/c9a84c?text=MadeCases"
-                alt="MadeCases premium acrylic display case"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-              />
-            </div>
+            <ProductGallery images={PRODUCT_IMAGES} />
           </div>
         </div>
       </section>
@@ -157,7 +164,7 @@ export default function HomePage() {
           flexWrap: 'wrap',
           padding: '0 40px',
         }}>
-          {['Optical-Grade Acrylic', 'Flame-Polished Edges', 'N52 Magnetic Closure', 'UV-Filtering Available', 'Collector-Designed', 'Built to Display'].map(t => (
+          {['Custom-Fit for ETBs', 'Optical-Grade Acrylic', 'Flame-Polished Edges', 'N52 Magnetic Closure', 'UV-Filtering Available', 'Collector-Designed'].map(t => (
             <span key={t}>{t}</span>
           ))}
         </div>
@@ -188,18 +195,18 @@ export default function HomePage() {
           {[
             {
               n: '01',
-              title: 'Optical Clarity',
-              body: 'Cast acrylic, not extruded. Zero distortion, zero yellowing. Your cards look exactly as they should — even in ten years.',
+              title: 'Custom-Fit for ETBs',
+              body: 'Precision-cut to fit sealed Pokemon Elite Trainer Boxes. No rattling, no padding, no compromises. Snaps in and stays put.',
             },
             {
               n: '02',
-              title: 'Built to Display',
-              body: 'Flame-polished edges, N52 magnetic closures, optional UV-filtering. This is a display case that earns its place on your shelf.',
+              title: 'Optical-Grade Acrylic',
+              body: 'Cast acrylic with flame-polished edges, N52 magnetic closure, and optional UV-filtering. Every angle looks like it belongs in a display case.',
             },
             {
               n: '03',
-              title: 'Collector-First',
-              body: 'We built this for our own collections. Every decision starts with one question: would we actually want this for our chase cards?',
+              title: 'Built by Collectors',
+              body: 'We made this because nothing on the market was good enough for our own ETBs. If it doesn\'t pass our shelf, it doesn\'t ship.',
             },
           ].map(({ n, title, body }) => (
             <div key={n} className="feature-card">
@@ -247,8 +254,8 @@ export default function HomePage() {
             color: 'rgba(240,232,213,0.5)',
             marginBottom: '52px',
           }}>
-            Waitlist members get 48-hour early access and Founding Member pricing
-            before the public launch. First 50 get 20% off.
+            We're building the first run now. Founding members get 48-hour early
+            access and up to 20% off before anyone else sees the price.
           </p>
 
           <div className="glass-card" style={{ padding: '48px 40px' }}>
