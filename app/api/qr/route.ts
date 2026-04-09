@@ -6,12 +6,13 @@ export async function GET(request: NextRequest) {
   const url = searchParams.get('url') ?? process.env.NEXT_PUBLIC_APP_URL ?? 'https://madecases.com'
   const label = searchParams.get('label') ?? ''
 
-  const buffer = await QRCode.toBuffer(url, {
+  const nodeBuffer = await QRCode.toBuffer(url, {
     type: 'png',
     width: 400,
     margin: 2,
     color: { dark: '#000000', light: '#ffffff' },
   })
+  const buffer = new Uint8Array(nodeBuffer)
 
   return new NextResponse(buffer, {
     headers: {
