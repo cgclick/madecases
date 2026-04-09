@@ -1,26 +1,322 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-bg: #080809;
+  --color-surface: #0f0f12;
+  --color-surface-raised: #16161b;
+  --color-text: #f0e8d5;
+  --color-text-muted: rgba(240, 232, 213, 0.45);
+  --color-gold: #c9a84c;
+  --color-gold-light: #e8c87e;
+  --color-gold-dim: rgba(201, 168, 76, 0.12);
+  --color-border: rgba(201, 168, 76, 0.15);
+  --color-border-strong: rgba(201, 168, 76, 0.35);
+
+  --font-display: var(--font-cormorant), 'Georgia', serif;
+  --font-body: var(--font-jost), 'Helvetica Neue', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #080809;
+  color: #f0e8d5;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Noise Texture Overlay ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.1'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400% center; }
+  100% { background-position: 400% center; }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ── Animation Utilities ── */
+.anim-1 { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) both; }
+.anim-2 { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.1s both; }
+.anim-3 { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.2s both; }
+.anim-4 { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
+.anim-5 { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.45s both; }
+.anim-6 { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.6s both; }
+
+.float { animation: float 6s ease-in-out infinite; }
+
+/* ── Holographic brand shimmer ── */
+.holo-text {
+  background: linear-gradient(
+    90deg,
+    #c9a84c 0%,
+    #f0d785 20%,
+    #ffe99a 35%,
+    #c9a84c 50%,
+    #e8c87e 65%,
+    #fff0b0 80%,
+    #c9a84c 100%
+  );
+  background-size: 400% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Typography ── */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
+
+/* ── Glass Card ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  border-radius: 16px;
+}
+
+/* ── Custom Form Inputs ── */
+.mc-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(240, 232, 213, 0.5);
+  margin-bottom: 8px;
+  font-family: var(--font-body);
+}
+
+.mc-input,
+.mc-select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: #f0e8d5;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.mc-input:focus,
+.mc-select:focus {
+  outline: none;
+  border-color: rgba(201, 168, 76, 0.65);
+  background: rgba(201, 168, 76, 0.05);
+}
+
+.mc-input::placeholder {
+  color: rgba(240, 232, 213, 0.22);
+}
+
+.mc-select option {
+  background: #0f0f12;
+  color: #f0e8d5;
+}
+
+/* ── Gold Button ── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #c9a84c;
+  color: #080809;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, opacity 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold:hover {
+  background: #e8c87e;
+  transform: translateY(-1px);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-gold:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Ghost Button ── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: #c9a84c;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(201, 168, 76, 0.8);
+  background: rgba(201, 168, 76, 0.06);
+}
+
+/* ── Divider ── */
+.gold-line {
+  width: 48px;
+  height: 1px;
+  background: #c9a84c;
+  transform-origin: left;
+  animation: lineGrow 0.8s cubic-bezier(0.16,1,0.3,1) 0.4s both;
+}
+
+/* ── Pill Badge ── */
+.badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(201, 168, 76, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 100px;
+  padding: 5px 14px 5px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  font-family: var(--font-body);
+}
+
+.badge-live .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9a84c;
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+/* ── Section Eyebrow ── */
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240, 232, 213, 0.4);
+}
+
+/* ── Product Frame ── */
+.product-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  background: #0f0f12;
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.06),
+    0 40px 80px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.product-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Feature Card ── */
+.feature-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.feature-card:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+  background: rgba(201, 168, 76, 0.04);
+}
+
+/* ── Referral Tier Card ── */
+.tier-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(201, 168, 76, 0.1);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.tier-card:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  transform: translateY(-4px);
+}
+
+.tier-number {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 300;
+  color: #c9a84c;
+  line-height: 1;
+  margin-bottom: 4px;
 }

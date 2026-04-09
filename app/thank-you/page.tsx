@@ -15,29 +15,117 @@ async function ThankYouContent({ searchParams }: PageProps) {
   const firstName = name ? decodeURIComponent(name).split(' ')[0] : 'there'
 
   return (
-    <main className="min-h-screen bg-white px-6 py-16 flex flex-col items-center text-center">
-      <div className="mb-10 max-w-md">
-        <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+    <main style={{
+      background: '#080809',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '80px 24px 60px',
+    }}>
+
+      {/* Nav */}
+      <a href="/" style={{
+        fontFamily: 'var(--font-display)',
+        fontSize: '16px',
+        fontWeight: 600,
+        letterSpacing: '0.22em',
+        textTransform: 'uppercase',
+        textDecoration: 'none',
+        marginBottom: '80px',
+        display: 'block',
+      }} className="holo-text">
+        MadeCases
+      </a>
+
+      {/* Confirmation */}
+      <div className="anim-1" style={{
+        textAlign: 'center',
+        maxWidth: '520px',
+        marginBottom: '56px',
+      }}>
+        {/* Check mark */}
+        <div style={{
+          width: '56px', height: '56px',
+          borderRadius: '50%',
+          border: '1px solid rgba(201,168,76,0.4)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          margin: '0 auto 28px',
+          background: 'rgba(201,168,76,0.08)',
+        }}>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M5 13l4 4L19 7" stroke="#c9a84c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
-        <h1 className="text-3xl font-black mb-3">You're in, {firstName}.</h1>
-        <p className="text-gray-500 text-lg">
-          We'll email you 48 hours before anyone else when Founding Member pricing opens.
-          In the meantime — share your link and earn rewards.
+
+        <h1 className="font-display" style={{
+          fontSize: 'clamp(40px, 6vw, 64px)',
+          fontWeight: 300,
+          color: '#f0e8d5',
+          lineHeight: 1.1,
+          marginBottom: '8px',
+        }}>
+          You&apos;re in,
+        </h1>
+        <h1 className="font-display" style={{
+          fontSize: 'clamp(40px, 6vw, 64px)',
+          fontWeight: 600,
+          fontStyle: 'italic',
+          color: '#c9a84c',
+          lineHeight: 1.1,
+          marginBottom: '28px',
+        }}>
+          {firstName}.
+        </h1>
+
+        <p style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '16px',
+          lineHeight: 1.7,
+          color: 'rgba(240,232,213,0.5)',
+        }}>
+          Watch your inbox — you&apos;ll get a 48-hour head start before
+          Founding Member pricing opens to anyone else.
+          <br />
+          <strong style={{ color: 'rgba(240,232,213,0.7)', fontWeight: 500 }}>
+            Now share your link and earn rewards.
+          </strong>
         </p>
       </div>
 
-      <ReferralShare
-        referralCode={decodeURIComponent(code)}
-        referralUrl={decodeURIComponent(url)}
-        name={name ? decodeURIComponent(name) : ''}
-      />
+      {/* Divider */}
+      <div style={{
+        width: '1px', height: '40px',
+        background: 'linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent)',
+        marginBottom: '40px',
+      }} />
 
-      <a href="/" className="mt-8 text-sm text-gray-400 underline hover:text-gray-600">
-        Back to homepage
+      {/* Referral share */}
+      <div className="anim-2" style={{ width: '100%', maxWidth: '520px' }}>
+        <ReferralShare
+          referralCode={decodeURIComponent(code)}
+          referralUrl={decodeURIComponent(url)}
+          name={name ? decodeURIComponent(name) : ''}
+        />
+      </div>
+
+      {/* Back link */}
+      <a href="/" style={{
+        fontFamily: 'var(--font-body)',
+        fontSize: '12px',
+        letterSpacing: '0.1em',
+        textTransform: 'uppercase',
+        color: 'rgba(240,232,213,0.25)',
+        textDecoration: 'none',
+        marginTop: '48px',
+        transition: 'color 0.2s',
+      }}
+      onMouseEnter={e => (e.currentTarget.style.color = 'rgba(240,232,213,0.6)')}
+      onMouseLeave={e => (e.currentTarget.style.color = 'rgba(240,232,213,0.25)')}
+      >
+        ← Back to madecases.com
       </a>
+
     </main>
   )
 }
