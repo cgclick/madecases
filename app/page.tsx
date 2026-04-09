@@ -31,7 +31,7 @@ export default function HomePage() {
           fontSize: '18px', fontWeight: 600, letterSpacing: '0.22em',
           textTransform: 'uppercase',
         }}>
-          MadeCases
+          MADE CASES
         </span>
         <span className="badge-live">
           <span className="dot" />
@@ -40,7 +40,7 @@ export default function HomePage() {
       </nav>
 
       {/* ── Hero ── */}
-      <section style={{
+      <section className="hero-section" style={{
         minHeight: '100vh',
         display: 'flex', alignItems: 'center',
         padding: '120px 40px 80px',
@@ -191,7 +191,7 @@ export default function HomePage() {
           </h2>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+        <div className="feature-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
           {[
             {
               n: '01',
@@ -258,7 +258,7 @@ export default function HomePage() {
             access and up to 20% off before anyone else sees the price.
           </p>
 
-          <div className="glass-card" style={{ padding: '48px 40px' }}>
+          <div className="glass-card waitlist-card" style={{ padding: '48px 40px' }}>
             <SignupForm />
           </div>
         </div>
@@ -288,7 +288,7 @@ export default function HomePage() {
           Every person you refer gets you closer to a free case.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }}>
+        <div className="tier-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }}>
           {[
             { n: '1', label: 'Referral', reward: '$5 Store Credit' },
             { n: '3', label: 'Referrals', reward: 'Free Branded Sleeves' },
@@ -323,7 +323,7 @@ export default function HomePage() {
           fontSize: '16px', fontWeight: 600, letterSpacing: '0.2em',
           textTransform: 'uppercase',
         }}>
-          MadeCases
+          MADE CASES
         </span>
         <span style={{
           fontFamily: 'var(--font-body)',
@@ -334,21 +334,43 @@ export default function HomePage() {
         </span>
       </footer>
 
-      {/* ── Mobile hero grid fix ── */}
+      {/* ── Mobile styles ── */}
       <style>{`
         @media (max-width: 768px) {
           .hero-grid {
             grid-template-columns: 1fr !important;
-            gap: 48px !important;
+            gap: 40px !important;
           }
           .hero-grid > div:last-child {
             order: -1;
           }
+          .feature-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .tier-grid {
+            grid-template-columns: 1fr !important;
+            max-width: 320px;
+            margin: 0 auto;
+          }
         }
         @media (max-width: 600px) {
-          nav { padding: 18px 20px !important; }
-          section { padding-left: 20px !important; padding-right: 20px !important; }
+          nav { padding: 16px 20px !important; }
+          section {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+            padding-top: 72px !important;
+            padding-bottom: 60px !important;
+          }
+          .hero-section {
+            padding-top: 100px !important;
+            padding-bottom: 60px !important;
+          }
           footer { padding: 24px 20px !important; }
+          .waitlist-card { padding: 32px 20px !important; }
+          .marquee-inner {
+            gap: 32px !important;
+            padding: 0 20px !important;
+          }
         }
       `}</style>
 

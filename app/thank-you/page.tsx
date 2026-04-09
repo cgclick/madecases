@@ -35,7 +35,7 @@ async function ThankYouContent({ searchParams }: PageProps) {
         marginBottom: '80px',
         display: 'block',
       }} className="holo-text">
-        MadeCases
+        MADE CASES
       </a>
 
       {/* Confirmation */}

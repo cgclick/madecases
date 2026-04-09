@@ -18,7 +18,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
       {/* Main image */}
       <div
         className="product-frame float"
-        style={{ width: '100%', aspectRatio: '3/4', marginBottom: '16px' }}
+        style={{ width: '100%', aspectRatio: '1/1', marginBottom: '16px' }}
       >
         {slots.map((img, i) => (
           <img
