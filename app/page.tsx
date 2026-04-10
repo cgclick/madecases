@@ -118,28 +118,6 @@ export default function HomePage() {
               </a>
             </div>
 
-            {/* Founding access note */}
-            <div className="anim-5" style={{
-              display: 'flex', alignItems: 'center', gap: '10px',
-              padding: '12px 16px',
-              background: '#EEF3FF',
-              border: '1px solid #DDEAFF',
-              borderRadius: '10px',
-              maxWidth: '360px',
-            }}>
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0 }}>
-                <circle cx="8" cy="8" r="7" stroke="#1B5CE6" strokeWidth="1.5"/>
-                <path d="M8 5v4M8 11v.5" stroke="#1B5CE6" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
-              <span style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '13px',
-                color: '#3D5070',
-                lineHeight: 1.4,
-              }}>
-                Be part of the first production run. Founding access is now open.
-              </span>
-            </div>
           </div>
 
           {/* Right — Product gallery */}
