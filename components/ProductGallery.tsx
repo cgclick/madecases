@@ -52,6 +52,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
               width: '100%',
               height: '100%',
               objectFit: 'cover',
+              objectPosition: 'center',
               display: 'block',
               opacity: active === i ? 1 : 0,
               transition: 'opacity 0.5s cubic-bezier(0.4,0,0.2,1)',

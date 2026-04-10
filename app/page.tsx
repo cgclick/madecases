@@ -3,7 +3,7 @@ import ProductGallery from '@/components/ProductGallery'
 
 const PRODUCT_IMAGES = [
   {
-    src: '/etb-case-hero_ah.png',
+    src: '/etb-case-hero_ah.jpg',
     alt: 'Made Cases ETB display case — hero',
   },
   {
