@@ -38,7 +38,7 @@ export default function HomePage() {
         </span>
         <span className="badge-live">
           <span className="dot" />
-          Founding Now
+          Founding Access Open
         </span>
       </nav>
 
@@ -89,15 +89,26 @@ export default function HomePage() {
               lineHeight: 1.7,
               color: '#3D5070',
               maxWidth: '420px',
-              marginBottom: '40px',
+              marginBottom: '16px',
             }}>
-              A custom-fit acrylic display case for sealed Pokémon Elite Trainer Boxes.
-              Optical-grade clarity, magnetic closure, UV-filtering. Show it off the way it deserves.
+              Premium acrylic display cases for sealed Pokémon Elite Trainer Boxes.
+              Custom-fit, crystal clear, and built to feel worthy of the product inside.
             </p>
 
-            <div className="anim-4" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '48px' }}>
+            <p className="anim-3" style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '14px',
+              lineHeight: 1.6,
+              color: '#8096B4',
+              maxWidth: '400px',
+              marginBottom: '40px',
+            }}>
+              Join the founding waitlist for first access to launch pricing, production updates, and the first premium production run.
+            </p>
+
+            <div className="anim-4" style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginBottom: '40px' }}>
               <a href="#waitlist" className="btn-gold" style={{ padding: '16px 28px', fontSize: '13px' }}>
-                Secure your spot
+                Join Founding Waitlist
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M8 3l5 5-5 5M3 8h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -107,26 +118,26 @@ export default function HomePage() {
               </a>
             </div>
 
-            {/* Social proof */}
+            {/* Founding access note */}
             <div className="anim-5" style={{
-              display: 'flex', alignItems: 'center', gap: '12px',
+              display: 'flex', alignItems: 'center', gap: '10px',
+              padding: '12px 16px',
+              background: '#EEF3FF',
+              border: '1px solid #DDEAFF',
+              borderRadius: '10px',
+              maxWidth: '360px',
             }}>
-              <div style={{ display: 'flex' }}>
-                {[0,1,2,3].map(i => (
-                  <div key={i} style={{
-                    width: '34px', height: '34px', borderRadius: '50%',
-                    background: ['linear-gradient(135deg,#DDEAFF,#B8CFFF)','linear-gradient(135deg,#C5D8FF,#94B8FF)','linear-gradient(135deg,#FFE999,#FFD000)','linear-gradient(135deg,#DDEAFF,#94B8FF)'][i],
-                    border: '2px solid #fff',
-                    marginLeft: i === 0 ? 0 : '-10px',
-                  }} />
-                ))}
-              </div>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ flexShrink: 0 }}>
+                <circle cx="8" cy="8" r="7" stroke="#1B5CE6" strokeWidth="1.5"/>
+                <path d="M8 5v4M8 11v.5" stroke="#1B5CE6" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
               <span style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: '#8096B4',
+                color: '#3D5070',
+                lineHeight: 1.4,
               }}>
-                Collectors already on the waitlist
+                Be part of the first production run. Founding access is now open.
               </span>
             </div>
           </div>
@@ -172,7 +183,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ── Why MadeCases ── */}
+      {/* ── Why Made Cases ── */}
       <section id="why" style={{
         padding: '100px 48px',
         maxWidth: '1240px', margin: '0 auto',
@@ -205,12 +216,12 @@ export default function HomePage() {
             {
               n: '02',
               title: 'Optical-Grade Acrylic',
-              body: 'Cast acrylic with flame-polished edges, N52 magnetic closure, and optional UV-filtering. Every angle looks like it belongs in a display case.',
+              body: 'Premium cast acrylic, polished edges, magnetic closure, and display-first clarity. Built to look as good as the box inside it.',
             },
             {
               n: '03',
               title: 'Built by Collectors',
-              body: 'We made this because nothing on the market was good enough for our own ETBs. If it doesn\'t pass our shelf, it doesn\'t ship.',
+              body: 'We made this because too many cases on the market feel generic, bulky, or like an afterthought. If it doesn\'t earn a place on our shelf, it doesn\'t ship.',
             },
           ].map(({ n, title, body }) => (
             <div key={n} className="feature-card">
@@ -233,6 +244,93 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Founding Drop / How It Works ── */}
+      <section id="founding" style={{
+        padding: '100px 48px',
+        background: '#F0F5FF',
+        borderTop: '1px solid #D5E3FF',
+        borderBottom: '1px solid #D5E3FF',
+        position: 'relative', zIndex: 1,
+      }}>
+        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <span className="eyebrow" style={{ display: 'inline-block', marginBottom: '16px' }}>
+              Founding Drop
+            </span>
+            <h2 className="font-display" style={{
+              fontSize: 'clamp(32px, 3.5vw, 52px)',
+              fontWeight: 800,
+              color: '#0B1A35',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.1,
+              marginBottom: '16px',
+            }}>
+              Be part of the first production run.
+            </h2>
+            <p style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '16px', lineHeight: 1.7,
+              color: '#3D5070',
+              maxWidth: '520px', margin: '0 auto',
+            }}>
+              Made Cases is opening its first premium production run to founding collectors.
+              Join early for first access to the initial batch, launch pricing, and priority before public release.
+            </p>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }} className="feature-grid">
+            {[
+              {
+                step: '1',
+                title: 'Join the waitlist',
+                body: 'Get early access before the public launch. No commitment required — just your place in line.',
+              },
+              {
+                step: '2',
+                title: 'Founding members go first',
+                body: 'When the first batch opens, founding members get the first opportunity to secure cases from the initial production run.',
+              },
+              {
+                step: '3',
+                title: 'Public release comes next',
+                body: 'Any remaining inventory opens to the public after founding members have had first access.',
+              },
+            ].map(({ step, title, body }) => (
+              <div key={step} style={{
+                background: '#fff',
+                border: '1px solid #D5E3FF',
+                borderRadius: '16px',
+                padding: '32px 28px',
+                position: 'relative',
+              }}>
+                <div style={{
+                  width: '36px', height: '36px',
+                  borderRadius: '50%',
+                  background: '#1B5CE6',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  marginBottom: '20px',
+                }}>
+                  <span style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '14px', fontWeight: 800,
+                    color: '#fff',
+                  }}>{step}</span>
+                </div>
+                <h3 className="font-display" style={{
+                  fontSize: '20px', fontWeight: 700,
+                  color: '#0B1A35', marginBottom: '10px',
+                }}>{title}</h3>
+                <p style={{
+                  fontFamily: 'var(--font-body)',
+                  fontSize: '14px', lineHeight: 1.7,
+                  color: '#3D5070',
+                }}>{body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Waitlist Form ── */}
       <section id="waitlist" style={{
         padding: '100px 48px',
@@ -240,7 +338,6 @@ export default function HomePage() {
         position: 'relative', zIndex: 1,
         overflow: 'hidden',
       }}>
-        {/* Glow accents */}
         <div style={{ position: 'absolute', top: '-60px', right: '-60px', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(255,208,0,0.12) 0%, transparent 70%)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: '-80px', left: '-40px', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%)', pointerEvents: 'none' }} />
 
@@ -262,16 +359,15 @@ export default function HomePage() {
             letterSpacing: '-0.02em',
             lineHeight: 1.1,
           }}>
-            Join before it opens.
+            Join the founding waitlist.
           </h2>
           <p style={{
             fontFamily: 'var(--font-body)',
             fontSize: '15px', lineHeight: 1.7,
-            color: 'rgba(255,255,255,0.6)',
+            color: 'rgba(255,255,255,0.65)',
             marginBottom: '48px',
           }}>
-            We're building the first run now. Founding members get 48-hour early
-            access and up to 20% off before anyone else sees the price.
+            Get first access to launch pricing, first-run availability, and production updates before the public release.
           </p>
 
           <div className="glass-card waitlist-card" style={{ padding: '40px 36px', background: 'rgba(255,255,255,0.08)', borderColor: 'rgba(255,255,255,0.15)' }}>
@@ -280,15 +376,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Referral ── */}
+      {/* ── Why Join Early ── */}
       <section style={{
         padding: '100px 48px',
-        maxWidth: '1000px', margin: '0 auto',
+        maxWidth: '900px', margin: '0 auto',
         textAlign: 'center',
         position: 'relative', zIndex: 1,
       }}>
         <span className="eyebrow" style={{ display: 'inline-block', marginBottom: '16px' }}>
-          Referral Rewards
+          Founding Access
         </span>
         <h2 className="font-display" style={{
           fontSize: 'clamp(32px, 3.5vw, 48px)',
@@ -296,47 +392,162 @@ export default function HomePage() {
           marginBottom: '16px',
           letterSpacing: '-0.02em',
         }}>
-          Refer friends. <em style={{ color: '#1B5CE6', fontStyle: 'italic' }}>Earn rewards.</em>
+          Why join early.
         </h2>
         <p style={{
           fontFamily: 'var(--font-body)',
           fontSize: '15px', color: '#8096B4',
-          maxWidth: '380px', margin: '0 auto 52px',
+          maxWidth: '400px', margin: '0 auto 52px',
           lineHeight: 1.7,
         }}>
-          Every person you refer gets you closer to a free case.
+          Founding members get access that the general public won't.
         </p>
 
-        <div className="tier-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }}>
+        <div className="feature-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '16px', maxWidth: '720px', margin: '0 auto', textAlign: 'left' }}>
           {[
-            { n: '1', label: 'Referral', reward: '$5 Store Credit', featured: false },
-            { n: '3', label: 'Referrals', reward: 'Free Branded Sleeves', featured: true },
-            { n: '5+', label: 'Referrals', reward: 'Free Case or Exclusive Colorway', featured: false },
-          ].map(({ n, label, reward, featured }) => (
-            <div key={n} className="tier-card" style={featured ? {
-              borderColor: '#FFD000',
-              background: 'linear-gradient(135deg,#FFFBE6,#FFF7CC)',
-            } : {}}>
-              <div className="tier-number" style={{ color: featured ? '#E6B800' : '#1B5CE6' }}>{n}</div>
+            { icon: '→', title: 'First access to launch pricing', body: 'Founding waitlist members are first to receive pricing details when the initial run opens.' },
+            { icon: '→', title: 'Priority before public release', body: 'Cases from the first production run go to founding members before any broader availability.' },
+            { icon: '→', title: 'Direct production updates', body: 'Stay informed on production progress and timelines as the first run develops.' },
+            { icon: '→', title: 'Early access to future drops', body: 'Founding supporters will have continued early access as new products and versions launch.' },
+          ].map(({ icon, title, body }) => (
+            <div key={title} style={{
+              background: '#fff',
+              border: '1px solid #D5E3FF',
+              borderRadius: '14px',
+              padding: '24px',
+              transition: 'border-color 0.2s, box-shadow 0.2s',
+            }}
+            className="feature-card"
+            >
               <div style={{
+                display: 'flex', alignItems: 'center', gap: '10px',
+                marginBottom: '10px',
+              }}>
+                <span style={{
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '16px', fontWeight: 800,
+                  color: '#1B5CE6',
+                }}>{icon}</span>
+                <h3 className="font-display" style={{
+                  fontSize: '16px', fontWeight: 700,
+                  color: '#0B1A35',
+                }}>{title}</h3>
+              </div>
+              <p style={{
                 fontFamily: 'var(--font-body)',
-                fontSize: '11px', fontWeight: 600,
-                letterSpacing: '0.15em', textTransform: 'uppercase',
-                color: '#8096B4', marginBottom: '16px',
-              }}>{label}</div>
-              <div style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '14px', fontWeight: 600,
-                color: featured ? '#E6B800' : '#1B5CE6',
-              }}>{reward}</div>
+                fontSize: '13px', lineHeight: 1.7,
+                color: '#3D5070',
+              }}>{body}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section style={{
+        padding: '80px 48px 100px',
+        maxWidth: '720px', margin: '0 auto',
+        position: 'relative', zIndex: 1,
+      }}>
+        <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <span className="eyebrow" style={{ display: 'inline-block', marginBottom: '16px' }}>FAQ</span>
+          <h2 className="font-display" style={{
+            fontSize: 'clamp(28px, 3vw, 40px)',
+            fontWeight: 800, color: '#0B1A35',
+            letterSpacing: '-0.02em',
+          }}>Common questions.</h2>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          {[
+            {
+              q: 'What does joining the waitlist mean?',
+              a: 'You\'ll be first to hear about launch timing, pricing, and access to the first production run. No commitment, no payment — just your place in line.',
+            },
+            {
+              q: 'Is this a preorder?',
+              a: 'Not yet. The current waitlist is for early access before the first production run opens to founding members.',
+            },
+            {
+              q: 'Will waitlist members get early pricing?',
+              a: 'Yes. Founding waitlist members will be first to receive launch pricing and first-run details.',
+            },
+            {
+              q: 'What product is this made for?',
+              a: 'This case is designed specifically for sealed Pokémon Elite Trainer Boxes.',
+            },
+            {
+              q: 'Will there be more sizes or versions later?',
+              a: 'That\'s the plan. The first launch is focused on getting the flagship ETB case right.',
+            },
+          ].map(({ q, a }) => (
+            <div key={q} style={{
+              background: '#fff',
+              border: '1px solid #D5E3FF',
+              borderRadius: '14px',
+              padding: '24px 28px',
+            }}>
+              <p className="font-display" style={{
+                fontSize: '16px', fontWeight: 700,
+                color: '#0B1A35', marginBottom: '8px',
+              }}>{q}</p>
+              <p style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: '14px', lineHeight: 1.7,
+                color: '#3D5070',
+                margin: 0,
+              }}>{a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Final CTA ── */}
+      <section style={{
+        padding: '80px 48px',
+        background: '#0B1A35',
+        textAlign: 'center',
+        position: 'relative', zIndex: 1,
+        overflow: 'hidden',
+      }}>
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '600px', height: '300px', background: 'radial-gradient(ellipse, rgba(27,92,230,0.25) 0%, transparent 70%)', pointerEvents: 'none' }} />
+        <div style={{ maxWidth: '540px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+          <span style={{
+            display: 'inline-block',
+            fontFamily: 'var(--font-body)',
+            fontSize: '11px', fontWeight: 600,
+            letterSpacing: '0.2em', textTransform: 'uppercase',
+            color: '#FFD000', marginBottom: '20px',
+          }}>Founding Drop</span>
+          <h2 className="font-display" style={{
+            fontSize: 'clamp(28px, 3.5vw, 44px)',
+            fontWeight: 800, color: '#fff',
+            letterSpacing: '-0.02em',
+            lineHeight: 1.1, marginBottom: '16px',
+          }}>
+            Get early access to the founding drop.
+          </h2>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '15px', lineHeight: 1.7,
+            color: 'rgba(255,255,255,0.5)',
+            marginBottom: '36px',
+          }}>
+            Join the waitlist now to be first in line for launch pricing, first-run availability, and production updates.
+          </p>
+          <a href="#waitlist" className="btn-gold" style={{ padding: '16px 32px', fontSize: '13px' }}>
+            Join Founding Waitlist
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 3l5 5-5 5M3 8h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
         </div>
       </section>
 
       {/* ── Footer ── */}
       <footer style={{
         background: '#0B1A35',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
         padding: '32px 48px',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         flexWrap: 'wrap', gap: '12px',
@@ -370,7 +581,6 @@ export default function HomePage() {
           }
           .hero-grid > div:last-child { order: -1; }
           .feature-grid { grid-template-columns: 1fr !important; }
-          .tier-grid { grid-template-columns: 1fr !important; max-width: 320px; margin: 0 auto; }
         }
         @media (max-width: 600px) {
           nav { padding: 14px 20px !important; }

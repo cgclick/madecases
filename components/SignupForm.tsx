@@ -182,7 +182,7 @@ export default function SignupForm() {
           'Securing your spot…'
         ) : (
           <>
-            Secure Your Founding Spot
+            Join Founding Waitlist
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M8 3l5 5-5 5M3 8h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
@@ -198,7 +198,7 @@ export default function SignupForm() {
         marginTop: '14px',
         letterSpacing: '0.05em',
       }}>
-        No spam · Early access only · Unsubscribe anytime
+        No spam. Just launch updates, early access, and first-run details.
       </p>
 
       {/* Mobile grid fix */}
