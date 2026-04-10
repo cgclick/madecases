@@ -147,42 +147,41 @@ export default function ReferralShare({ referralCode, referralUrl }: ReferralSha
         </a>
       </div>
 
-      {/* Reward tiers */}
+      {/* Referral reward */}
       <div style={{
-        background: '#fff',
-        border: '1px solid #D5E3FF',
+        background: '#EEF3FF',
+        border: '1px solid #DDEAFF',
         borderRadius: '16px',
         padding: '24px',
+        display: 'flex',
+        alignItems: 'flex-start',
+        gap: '16px',
       }}>
-        <p style={{
-          fontFamily: 'var(--font-body)',
-          fontSize: '11px', fontWeight: 600,
-          letterSpacing: '0.2em', textTransform: 'uppercase',
-          color: '#8096B4', marginBottom: '16px',
-        }}>Referral Rewards</p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          {[
-            { count: '1 referral', reward: '$5 store credit' },
-            { count: '3 referrals', reward: 'Free branded sleeves' },
-            { count: '5+ referrals', reward: 'Free case or exclusive colorway' },
-          ].map(({ count, reward }) => (
-            <div key={count} style={{
-              display: 'flex', alignItems: 'center',
-              justifyContent: 'space-between', gap: '16px',
-            }}>
-              <span style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '13px',
-                color: '#8096B4',
-              }}>{count}</span>
-              <span style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '13px',
-                fontWeight: 600,
-                color: '#1B5CE6',
-              }}>{reward}</span>
-            </div>
-          ))}
+        <div style={{
+          width: '40px', height: '40px', flexShrink: 0,
+          borderRadius: '50%',
+          background: '#1B5CE6',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <p style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '15px', fontWeight: 700,
+            color: '#0B1A35', marginBottom: '6px',
+          }}>
+            Refer 5 friends who purchase — get your case free.
+          </p>
+          <p style={{
+            fontFamily: 'var(--font-body)',
+            fontSize: '13px', lineHeight: 1.6,
+            color: '#3D5070',
+          }}>
+            Share your link. When 5 people use it to buy a case, yours is on us. Purchases only — no gaming required.
+          </p>
         </div>
       </div>
     </div>

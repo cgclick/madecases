@@ -106,11 +106,19 @@ async function ThankYouContent({ searchParams }: PageProps) {
           lineHeight: 1.7,
           color: '#3D5070',
         }}>
-          Watch your inbox — you&apos;ll get a 48-hour head start before
-          Founding Member pricing opens to anyone else.
-          <br />
+          You&apos;re on the list. We&apos;ll be in touch with launch timing,
+          first-run details, and early access before the public release.
+        </p>
+        <p style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '15px',
+          lineHeight: 1.7,
+          color: '#3D5070',
+          marginTop: '12px',
+        }}>
+          Know a fellow collector?{' '}
           <strong style={{ color: '#0B1A35', fontWeight: 600 }}>
-            Now share your link and earn rewards.
+            Share your link. If 5 people purchase using your referral, your case is on us.
           </strong>
         </p>
       </div>
