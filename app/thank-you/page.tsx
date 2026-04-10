@@ -21,7 +21,7 @@ async function ThankYouContent({ searchParams }: PageProps) {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      padding: '80px 24px 60px',
+      padding: '0 24px 60px',
       position: 'relative',
     }}>
 
@@ -33,21 +33,31 @@ async function ThankYouContent({ searchParams }: PageProps) {
         pointerEvents: 'none', opacity: 0.45, zIndex: 0,
       }} />
 
-      {/* Nav */}
-      <a href="/" style={{
-        fontFamily: 'var(--font-display)',
-        fontSize: '16px',
-        fontWeight: 800,
-        letterSpacing: '0.22em',
-        textTransform: 'uppercase',
-        textDecoration: 'none',
-        marginBottom: '80px',
-        display: 'block',
-        color: '#1B5CE6',
-        position: 'relative', zIndex: 1,
+      {/* Nav bar */}
+      <nav style={{
+        position: 'sticky', top: 0,
+        width: '100%',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        padding: '16px 24px',
+        background: 'rgba(247,249,255,0.85)',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        borderBottom: '1px solid #D5E3FF',
+        marginBottom: '48px',
+        zIndex: 10,
       }}>
-        MADE CASES
-      </a>
+        <a href="/" style={{
+          fontFamily: 'var(--font-display)',
+          fontSize: '16px',
+          fontWeight: 800,
+          letterSpacing: '0.22em',
+          textTransform: 'uppercase',
+          textDecoration: 'none',
+          color: '#1B5CE6',
+        }}>
+          MADE CASES
+        </a>
+      </nav>
 
       {/* Confirmation */}
       <div className="anim-1" style={{
