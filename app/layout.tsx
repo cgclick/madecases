@@ -1,38 +1,38 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Jost } from 'next/font/google'
+import { Bricolage_Grotesque, Figtree } from 'next/font/google'
 import './globals.css'
 
-const cormorant = Cormorant_Garamond({
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  style: ['normal', 'italic'],
-  variable: '--font-cormorant',
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-bricolage',
   display: 'swap',
 })
 
-const jost = Jost({
+const figtree = Figtree({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600'],
-  variable: '--font-jost',
+  style: ['normal', 'italic'],
+  variable: '--font-figtree',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'MadeCases — Premium Pokemon Card Display Cases',
+  title: 'Made Cases — Premium Pokemon Card Display Cases',
   description:
     'Premium acrylic display cases for Pokemon card collectors. Join the waitlist for early access and Founding Member pricing.',
   openGraph: {
-    title: 'MadeCases — Premium Pokemon Card Display Cases',
+    title: 'Made Cases — Premium Pokemon Card Display Cases',
     description: 'Built by collectors, for collectors. Join the founding waitlist.',
     url: 'https://madecases.com',
-    siteName: 'MadeCases',
+    siteName: 'Made Cases',
     type: 'website',
   },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
+    <html lang="en" className={`${bricolage.variable} ${figtree.variable}`}>
       <body>{children}</body>
     </html>
   )

@@ -69,10 +69,10 @@ export default function SignupForm() {
     <form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
 
       {/* Row 1: Name + Email */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '14px' }}>
         <div>
           <label htmlFor="name" className="mc-label">
-            Full Name <span style={{ color: '#c9a84c' }}>*</span>
+            Full Name <span style={{ color: '#FFD000' }}>*</span>
           </label>
           <input
             id="name" name="name" type="text" required
@@ -83,7 +83,7 @@ export default function SignupForm() {
         </div>
         <div>
           <label htmlFor="email" className="mc-label">
-            Email <span style={{ color: '#c9a84c' }}>*</span>
+            Email <span style={{ color: '#FFD000' }}>*</span>
           </label>
           <input
             id="email" name="email" type="email" required
@@ -95,10 +95,10 @@ export default function SignupForm() {
       </div>
 
       {/* Row 2: Phone + Quantity */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '14px' }}>
         <div>
           <label htmlFor="phone" className="mc-label">
-            Phone <span style={{ color: 'rgba(240,232,213,0.3)', textTransform: 'none', letterSpacing: 0 }}>optional</span>
+            Phone <span style={{ color: 'rgba(255,255,255,0.3)', textTransform: 'none', letterSpacing: 0 }}>optional</span>
           </label>
           <input
             id="phone" name="phone" type="tel"
@@ -109,7 +109,7 @@ export default function SignupForm() {
         </div>
         <div>
           <label htmlFor="quantity_interest" className="mc-label">
-            Quantity Interest <span style={{ color: '#c9a84c' }}>*</span>
+            Quantity Interest <span style={{ color: '#FFD000' }}>*</span>
           </label>
           <select
             id="quantity_interest" name="quantity_interest"
@@ -125,7 +125,7 @@ export default function SignupForm() {
       </div>
 
       {/* Row 3: Style */}
-      <div style={{ marginBottom: '16px' }}>
+      <div style={{ marginBottom: '14px' }}>
         <label htmlFor="style_interest" className="mc-label">Product</label>
         <select
           id="style_interest" name="style_interest"
@@ -138,10 +138,10 @@ export default function SignupForm() {
       </div>
 
       {/* Row 4: City + ZIP */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '32px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '24px' }}>
         <div>
           <label htmlFor="city" className="mc-label">
-            City <span style={{ color: '#c9a84c' }}>*</span>
+            City <span style={{ color: '#FFD000' }}>*</span>
           </label>
           <input
             id="city" name="city" type="text" required
@@ -152,7 +152,7 @@ export default function SignupForm() {
         </div>
         <div>
           <label htmlFor="zip" className="mc-label">
-            ZIP <span style={{ color: '#c9a84c' }}>*</span>
+            ZIP <span style={{ color: '#FFD000' }}>*</span>
           </label>
           <input
             id="zip" name="zip" type="text" required
@@ -167,8 +167,8 @@ export default function SignupForm() {
       {status === 'error' && (
         <p style={{
           fontFamily: 'var(--font-body)',
-          fontSize: '13px', color: '#e87c6a',
-          marginBottom: '20px',
+          fontSize: '13px', color: '#FF6B6B',
+          marginBottom: '16px',
         }}>{errorMsg}</p>
       )}
 
@@ -176,8 +176,7 @@ export default function SignupForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="btn-gold"
-        style={{ width: '100%', padding: '18px 24px', fontSize: '13px' }}
+        className="btn-submit"
       >
         {status === 'loading' ? (
           'Securing your spot…'
@@ -194,9 +193,9 @@ export default function SignupForm() {
       <p style={{
         fontFamily: 'var(--font-body)',
         fontSize: '12px',
-        color: 'rgba(240,232,213,0.25)',
+        color: 'rgba(255,255,255,0.3)',
         textAlign: 'center',
-        marginTop: '16px',
+        marginTop: '14px',
         letterSpacing: '0.05em',
       }}>
         No spam · Early access only · Unsubscribe anytime

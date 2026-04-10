@@ -16,25 +16,36 @@ async function ThankYouContent({ searchParams }: PageProps) {
 
   return (
     <main style={{
-      background: '#080809',
+      background: '#F7F9FF',
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       padding: '80px 24px 60px',
+      position: 'relative',
     }}>
+
+      {/* dot grid */}
+      <div style={{
+        position: 'fixed', inset: 0,
+        backgroundImage: 'radial-gradient(circle, #C5D8FF 1px, transparent 1px)',
+        backgroundSize: '28px 28px',
+        pointerEvents: 'none', opacity: 0.45, zIndex: 0,
+      }} />
 
       {/* Nav */}
       <a href="/" style={{
         fontFamily: 'var(--font-display)',
         fontSize: '16px',
-        fontWeight: 600,
+        fontWeight: 800,
         letterSpacing: '0.22em',
         textTransform: 'uppercase',
         textDecoration: 'none',
         marginBottom: '80px',
         display: 'block',
-      }} className="holo-text">
+        color: '#1B5CE6',
+        position: 'relative', zIndex: 1,
+      }}>
         MADE CASES
       </a>
 
@@ -42,26 +53,27 @@ async function ThankYouContent({ searchParams }: PageProps) {
       <div className="anim-1" style={{
         textAlign: 'center',
         maxWidth: '520px',
-        marginBottom: '56px',
+        marginBottom: '48px',
+        position: 'relative', zIndex: 1,
       }}>
         {/* Check mark */}
         <div style={{
           width: '56px', height: '56px',
           borderRadius: '50%',
-          border: '1px solid rgba(201,168,76,0.4)',
+          border: '1px solid #DDEAFF',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           margin: '0 auto 28px',
-          background: 'rgba(201,168,76,0.08)',
+          background: '#EEF3FF',
         }}>
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-            <path d="M5 13l4 4L19 7" stroke="#c9a84c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M5 13l4 4L19 7" stroke="#1B5CE6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </div>
 
         <h1 className="font-display" style={{
           fontSize: 'clamp(40px, 6vw, 64px)',
-          fontWeight: 300,
-          color: '#f0e8d5',
+          fontWeight: 800,
+          color: '#0B1A35',
           lineHeight: 1.1,
           marginBottom: '8px',
         }}>
@@ -69,9 +81,9 @@ async function ThankYouContent({ searchParams }: PageProps) {
         </h1>
         <h1 className="font-display" style={{
           fontSize: 'clamp(40px, 6vw, 64px)',
-          fontWeight: 600,
+          fontWeight: 800,
           fontStyle: 'italic',
-          color: '#c9a84c',
+          color: '#1B5CE6',
           lineHeight: 1.1,
           marginBottom: '28px',
         }}>
@@ -82,12 +94,12 @@ async function ThankYouContent({ searchParams }: PageProps) {
           fontFamily: 'var(--font-body)',
           fontSize: '16px',
           lineHeight: 1.7,
-          color: 'rgba(240,232,213,0.5)',
+          color: '#3D5070',
         }}>
           Watch your inbox — you&apos;ll get a 48-hour head start before
           Founding Member pricing opens to anyone else.
           <br />
-          <strong style={{ color: 'rgba(240,232,213,0.7)', fontWeight: 500 }}>
+          <strong style={{ color: '#0B1A35', fontWeight: 600 }}>
             Now share your link and earn rewards.
           </strong>
         </p>
@@ -96,12 +108,13 @@ async function ThankYouContent({ searchParams }: PageProps) {
       {/* Divider */}
       <div style={{
         width: '1px', height: '40px',
-        background: 'linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent)',
+        background: 'linear-gradient(to bottom, transparent, #DDEAFF, transparent)',
         marginBottom: '40px',
+        position: 'relative', zIndex: 1,
       }} />
 
       {/* Referral share */}
-      <div className="anim-2" style={{ width: '100%', maxWidth: '520px' }}>
+      <div className="anim-2" style={{ width: '100%', maxWidth: '520px', position: 'relative', zIndex: 1 }}>
         <ReferralShare
           referralCode={decodeURIComponent(code)}
           referralUrl={decodeURIComponent(url)}
@@ -110,7 +123,7 @@ async function ThankYouContent({ searchParams }: PageProps) {
       </div>
 
       {/* Back link */}
-      <a href="/" className="back-link">
+      <a href="/" className="back-link" style={{ position: 'relative', zIndex: 1 }}>
         ← Back to madecases.com
       </a>
 
@@ -120,12 +133,12 @@ async function ThankYouContent({ searchParams }: PageProps) {
           font-size: 12px;
           letter-spacing: 0.1em;
           text-transform: uppercase;
-          color: rgba(240,232,213,0.25);
+          color: #8096B4;
           text-decoration: none;
           margin-top: 48px;
           transition: color 0.2s;
         }
-        .back-link:hover { color: rgba(240,232,213,0.6); }
+        .back-link:hover { color: #1B5CE6; }
       `}</style>
 
     </main>

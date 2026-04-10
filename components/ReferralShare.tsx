@@ -26,33 +26,39 @@ export default function ReferralShare({ referralCode, referralUrl }: ReferralSha
     setTimeout(() => setCopied(false), 2500)
   }
 
-  const shareText = `Just secured my spot on the MadeCases founding waitlist — premium acrylic display cases for Pokemon collectors. Use my link for early access: ${referralUrl}`
+  const shareText = `Just secured my spot on the Made Cases founding waitlist — premium acrylic display cases for Pokemon collectors. Use my link for early access: ${referralUrl}`
 
   return (
     <div style={{ width: '100%', maxWidth: '520px' }}>
 
       {/* Referral code display */}
       <div style={{
-        background: 'rgba(201,168,76,0.06)',
-        border: '1px solid rgba(201,168,76,0.25)',
-        borderRadius: '12px',
+        background: '#EEF3FF',
+        border: '1px solid #DDEAFF',
+        borderRadius: '16px',
         padding: '28px 24px',
         textAlign: 'center',
-        marginBottom: '16px',
+        marginBottom: '12px',
       }}>
-        <p className="eyebrow" style={{ marginBottom: '12px' }}>Your Referral Code</p>
-        <p className="font-display holo-text" style={{
-          fontSize: '42px', fontWeight: 600,
+        <p style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '11px', fontWeight: 600,
+          letterSpacing: '0.2em', textTransform: 'uppercase',
+          color: '#8096B4', marginBottom: '12px',
+        }}>Your Referral Code</p>
+        <p className="font-display" style={{
+          fontSize: '42px', fontWeight: 800,
           letterSpacing: '0.15em',
           lineHeight: 1,
           marginBottom: '8px',
+          color: '#1B5CE6',
         }}>
           {referralCode}
         </p>
         <p style={{
           fontFamily: 'var(--font-body)',
           fontSize: '12px',
-          color: 'rgba(240,232,213,0.3)',
+          color: '#8096B4',
           letterSpacing: '0.08em',
         }}>
           Share your link · earn rewards
@@ -68,27 +74,27 @@ export default function ReferralShare({ referralCode, referralUrl }: ReferralSha
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '12px',
-          background: 'rgba(255,255,255,0.03)',
-          border: '1px solid rgba(201,168,76,0.15)',
-          borderRadius: '8px',
+          background: '#fff',
+          border: '1px solid #D5E3FF',
+          borderRadius: '10px',
           padding: '14px 18px',
           cursor: 'pointer',
-          marginBottom: '12px',
+          marginBottom: '10px',
           transition: 'border-color 0.2s, background 0.2s',
         }}
         onMouseEnter={e => {
-          (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(201,168,76,0.4)'
-          ;(e.currentTarget as HTMLButtonElement).style.background = 'rgba(201,168,76,0.04)'
+          (e.currentTarget as HTMLButtonElement).style.borderColor = '#1B5CE6'
+          ;(e.currentTarget as HTMLButtonElement).style.background = '#EEF3FF'
         }}
         onMouseLeave={e => {
-          (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(201,168,76,0.15)'
-          ;(e.currentTarget as HTMLButtonElement).style.background = 'rgba(255,255,255,0.03)'
+          (e.currentTarget as HTMLButtonElement).style.borderColor = '#D5E3FF'
+          ;(e.currentTarget as HTMLButtonElement).style.background = '#fff'
         }}
       >
         <span style={{
           fontFamily: 'var(--font-body)',
           fontSize: '13px',
-          color: 'rgba(240,232,213,0.45)',
+          color: '#8096B4',
           overflow: 'hidden',
           textOverflow: 'ellipsis',
           whiteSpace: 'nowrap',
@@ -103,7 +109,7 @@ export default function ReferralShare({ referralCode, referralUrl }: ReferralSha
           fontWeight: 600,
           letterSpacing: '0.1em',
           textTransform: 'uppercase',
-          color: copied ? '#6ee7a8' : '#c9a84c',
+          color: copied ? '#22C55E' : '#1B5CE6',
           flexShrink: 0,
           transition: 'color 0.2s',
         }}>
@@ -112,7 +118,7 @@ export default function ReferralShare({ referralCode, referralUrl }: ReferralSha
       </button>
 
       {/* Share buttons */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '28px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', marginBottom: '24px' }}>
         <a
           href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`}
           target="_blank"
@@ -143,12 +149,17 @@ export default function ReferralShare({ referralCode, referralUrl }: ReferralSha
 
       {/* Reward tiers */}
       <div style={{
-        background: 'rgba(255,255,255,0.02)',
-        border: '1px solid rgba(201,168,76,0.1)',
-        borderRadius: '12px',
+        background: '#fff',
+        border: '1px solid #D5E3FF',
+        borderRadius: '16px',
         padding: '24px',
       }}>
-        <p className="eyebrow" style={{ marginBottom: '16px' }}>Referral Rewards</p>
+        <p style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: '11px', fontWeight: 600,
+          letterSpacing: '0.2em', textTransform: 'uppercase',
+          color: '#8096B4', marginBottom: '16px',
+        }}>Referral Rewards</p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {[
             { count: '1 referral', reward: '$5 store credit' },
@@ -162,13 +173,13 @@ export default function ReferralShare({ referralCode, referralUrl }: ReferralSha
               <span style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                color: 'rgba(240,232,213,0.45)',
+                color: '#8096B4',
               }}>{count}</span>
               <span style={{
                 fontFamily: 'var(--font-body)',
                 fontSize: '13px',
-                fontWeight: 500,
-                color: '#c9a84c',
+                fontWeight: 600,
+                color: '#1B5CE6',
               }}>{reward}</span>
             </div>
           ))}
