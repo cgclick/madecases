@@ -103,7 +103,7 @@ export default function HomePage() {
               maxWidth: '420px',
               marginBottom: '8px',
             }}>
-              If your ETB is worth $100, $500, or more — it deserves a case that matches. Not a generic acrylic box from overseas. Something built specifically for it.
+              If your ETB is worth $100, $500, or more — it deserves a case that matches. Something built specifically for it, not just a generic acrylic box.
             </p>
 
             <p className="anim-3" style={{
