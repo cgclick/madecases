@@ -103,7 +103,7 @@ export default function HomePage() {
               maxWidth: '420px',
               marginBottom: '8px',
             }}>
-              If your ETB is worth $100, $500, or more — it deserves a case that matches. Something built specifically for it, not just a generic acrylic box.
+              If your ETB is worth $100, $500, or more, it deserves a case that matches. Something built specifically for it, not just a generic acrylic box.
             </p>
 
             <p className="anim-3" style={{
@@ -272,7 +272,7 @@ export default function HomePage() {
               {
                 step: '1',
                 title: 'Join the waitlist',
-                body: 'Get early access before the public launch. No commitment required — just your place in line.',
+                body: 'Get early access before the public launch. No commitment required, just your place in line.',
               },
               {
                 step: '2',
@@ -470,7 +470,7 @@ export default function HomePage() {
           {[
             {
               q: 'What does joining the waitlist mean?',
-              a: 'You\'ll be first to hear about launch timing, pricing, and access to the first production run. No commitment, no payment — just your place in line.',
+              a: 'You\'ll be first to hear about launch timing, pricing, and access to the first production run. No commitment, no payment. Just your place in line.',
             },
             {
               q: 'Is this a preorder?',
