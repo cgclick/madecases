@@ -9,6 +9,7 @@ interface FormState {
   phone: string
   quantity_interest: string
   style_interest: string
+  price_preference: string
   city: string
   zip: string
 }
@@ -19,6 +20,7 @@ const INITIAL_STATE: FormState = {
   phone: '',
   quantity_interest: '1',
   style_interest: 'standard',
+  price_preference: '',
   city: '',
   zip: '',
 }
@@ -134,6 +136,24 @@ export default function SignupForm() {
         >
           <option value="standard">Elite Trainer Box Case</option>
           <option value="unsure">Not sure yet</option>
+        </select>
+      </div>
+
+      {/* Price range */}
+      <div style={{ marginBottom: '14px' }}>
+        <label htmlFor="price_preference" className="mc-label">
+          What would you pay for a premium ETB case? <span style={{ color: 'rgba(255,255,255,0.3)', textTransform: 'none', letterSpacing: 0 }}>optional</span>
+        </label>
+        <select
+          id="price_preference" name="price_preference"
+          value={form.price_preference} onChange={handleChange}
+          className="mc-select"
+        >
+          <option value="">Select a range</option>
+          <option value="under_20">Under $20</option>
+          <option value="20_25">$20 – $25</option>
+          <option value="25_35">$25 – $35</option>
+          <option value="35_plus">$35+</option>
         </select>
       </div>
 

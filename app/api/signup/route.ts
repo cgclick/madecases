@@ -9,6 +9,7 @@ interface SignupBody {
   phone?: string
   quantity_interest: number
   style_interest?: string
+  price_preference?: string
   city: string
   zip: string
 }
@@ -32,6 +33,7 @@ function validateBody(body: unknown): { data: SignupBody } | { error: string } {
       phone: typeof b.phone === 'string' ? b.phone.trim() : undefined,
       quantity_interest: typeof b.quantity_interest === 'number' ? b.quantity_interest : 1,
       style_interest: typeof b.style_interest === 'string' ? b.style_interest : undefined,
+      price_preference: typeof b.price_preference === 'string' && b.price_preference ? b.price_preference : undefined,
       city: (b.city as string).trim(),
       zip: (b.zip as string).trim(),
     },

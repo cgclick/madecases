@@ -92,7 +92,18 @@ export default function HomePage() {
               marginBottom: '16px',
             }}>
               Premium acrylic display cases for sealed Pokémon Elite Trainer Boxes.
-              Custom-fit, crystal clear, and built to feel worthy of the product inside.
+              Custom-fit, crystal clear, and built to feel worthy of what&apos;s inside.
+            </p>
+
+            <p className="anim-3" style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '15px',
+              lineHeight: 1.7,
+              color: '#3D5070',
+              maxWidth: '420px',
+              marginBottom: '8px',
+            }}>
+              If your ETB is worth $100, $500, or more — it deserves a case that matches. Not a generic acrylic box from overseas. Something built specifically for it.
             </p>
 
             <p className="anim-3" style={{
@@ -343,10 +354,29 @@ export default function HomePage() {
             fontFamily: 'var(--font-body)',
             fontSize: '15px', lineHeight: 1.7,
             color: 'rgba(255,255,255,0.65)',
-            marginBottom: '48px',
+            marginBottom: '24px',
           }}>
             Get first access to launch pricing, first-run availability, and production updates before the public release.
           </p>
+
+          <div style={{
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
+            background: 'rgba(255,208,0,0.12)',
+            border: '1px solid rgba(255,208,0,0.3)',
+            borderRadius: '100px',
+            padding: '8px 18px',
+            marginBottom: '40px',
+          }}>
+            <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#FFD000', flexShrink: 0 }} />
+            <span style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '12px', fontWeight: 600,
+              letterSpacing: '0.1em', textTransform: 'uppercase',
+              color: '#FFD000',
+            }}>
+              Founding member pricing available at launch
+            </span>
+          </div>
 
           <div className="glass-card waitlist-card" style={{ padding: '40px 36px', background: 'rgba(255,255,255,0.08)', borderColor: 'rgba(255,255,255,0.15)' }}>
             <SignupForm />
