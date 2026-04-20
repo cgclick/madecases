@@ -150,10 +150,10 @@ export default function SignupForm() {
           className="mc-select"
         >
           <option value="">Select a range</option>
-          <option value="under_20">Under $20</option>
-          <option value="20_25">$20 – $25</option>
-          <option value="25_35">$25 – $35</option>
-          <option value="35_plus">$35+</option>
+          <option value="18_20">$18 – $20</option>
+          <option value="20_24">$20 – $24</option>
+          <option value="24_27">$24 – $27</option>
+          <option value="27_30">$27 – $30</option>
         </select>
       </div>
 
